@@ -1,0 +1,44 @@
+version: "3"
+
+services:
+  web:
+    container_name: "plant_blog_web_test"
+    build: .
+    ports:
+      - "80:80"
+      - "8080:8080"
+      - "5173:5173"
+      - "443:443"
+    networks:
+      plant_blog_network_test:
+        ipv4_address: 192.168.172.55
+    volumes:
+      - .:/var/www/html
+    tty: true
+    stdin_open: true
+    depends_on:
+      - database
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  database:
+    image: mariadb:10.2.25-bionic
+    container_name: "plant_blog_db_test"
+    ports:
+      - "3306:3306"
+    networks:
+      plant_blog_network_test:
+        ipv4_address: 192.168.172.51
+    volumes:
+      - ./.docker/mariadb/data:/var/lib/mariadb
+    environment:
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: 123
+    command: --default-authentication-plugin=mysql_native_password
+
+networks:
+  plant_blog_network_test:
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.172.0/24
