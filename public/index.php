@@ -4,7 +4,7 @@
 //    '192.168.172.51', # service name
 //    'root', # username
 //    '123', # password
-//    'plant_blog' # db table
+//    'plant_blog' # database table
 //);
 //
 //$table_name = "users";
@@ -22,7 +22,6 @@
 //    echo "<hr>";
 //}
 
-require_once 'vendor/autoload.php';
-require_once 'src/Main.php';
+require 'bootstrap.php';
 
-return new Main();
+return router();

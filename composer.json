@@ -3,8 +3,12 @@
         "twig/twig": "^3.0"
     },
     "autoload": {
+        "files": [
+            "app/helpers/constants.php",
+            "app/router/router.php"
+        ],
         "psr-4": {
-            "src\\": "src/"
+            "app\\": "app"
         }
     }
 }

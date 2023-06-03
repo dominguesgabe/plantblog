@@ -8,7 +8,7 @@ class Main
 {
     public function __construct()
     {
-        $twigloader = new FilesystemLoader('src/views/');
+        $twigloader = new FilesystemLoader('app/views/');
         $twig = new Environment($twigloader, []);
 
         echo $twig->render('index.twig', ['name' => 'gabe']);
