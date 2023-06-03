@@ -1,7 +1,0 @@
-CREATE DATABASE plant_blog
-
-CREATE TABLE users(
-    id int AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    name VARCHAR(255) NOT NULL,
-    birth_date DATE
-)
