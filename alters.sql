@@ -13,8 +13,8 @@ CREATE TABLE posts (
     title varchar(100) NOT NULL,
     description varchar(255) NOT NULL,
     post LONGTEXT NOT NULL,
-    created_at DATE DEFAULT current_timestamp() NOT NULL,
     user_id int NOT NULL,
+    created_at DATE DEFAULT current_timestamp() NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(id)
 )

@@ -1,13 +1,15 @@
 <div class="col mb-4">
     <div class="card shadow-sm">
-        <img src="{{ img }}" class="bd-placeholder-img card-img-top" width="100%" height="225">
+        <img src="{{ post.image_url }}" class="bd-placeholder-img card-img-top" width="100%" height="225" style="object-fit: cover">
         <div class="card-body">
-            <p class="card-text">{{ description }}</p>
+            <p class="card-text">{{ post.title }}</p>
+            <hr>
+            <p class="card-text">{{ post.description }}</p>
             <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                    <a href="{{ url }}" type="button" class="btn btn-sm btn-outline-secondary">Ler</a>
+                    <a href="/show/{{ post.id }}" type="button" class="btn btn-sm btn-outline-secondary">Ler</a>
                 </div>
-                <small class="text-body-secondary">{{ readingTime }} mins</small>
+                <small class="text-body-secondary">{{ post.reading_time }} minuto{% if post.reading_time > 1 %}s{% endif %}</small>
             </div>
         </div>
     </div>

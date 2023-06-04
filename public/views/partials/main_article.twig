@@ -1,10 +1,10 @@
 <main class="container mt-5">
-    <a href="{{ url }}" class="text-decoration-none">
-        <div class="p-4 p-md-5 mb-4 rounded" style="background: url(https://images.unsplash.com/photo-1512911268383-f74e84ff8496?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80) no-repeat;">
+    <a href="/show/{{ lastPost.id }}" class="text-decoration-none">
+        <div class="p-4 p-md-5 mb-4 rounded" style="background: url({{ lastPost.image_url }}) no-repeat center;">
             <div class="col-lg-6 px-0">
                 <p class="text-sm-left text-white">Última publicação.</p>
-                <h1 class="display-4 fst-italic text-white">Title{{ title }}</h1>
-                <p class="lead my-3 text-white">{{ description }}descrição lalala</p>
+                <h1 class="display-4 fst-italic text-white" style="font-weight: bold">{{ lastPost.title }}</h1>
+                <p class="lead my-3 text-white">{{ lastPost.description }}</p>
                 <p class="lead mb-0 text-body-emphasis fw-bold">Leia -></p>
             </div>
         </div>
