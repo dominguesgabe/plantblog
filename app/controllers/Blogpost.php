@@ -2,11 +2,9 @@
 
 namespace app\controllers;
 
-use app\core\TemplateMachine;
 use app\templates\Template;
-use TemplateNames;
 
-class Home
+class Blogpost
 {
     public function index()
     {
@@ -15,6 +13,6 @@ class Home
     }
     public function show(array $params)
     {
-        var_dump($params);
+        var_dump($params);exit();
     }
 }

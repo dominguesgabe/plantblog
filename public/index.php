@@ -1,9 +1,11 @@
 <?php
 
+use app\router\Router;
+
 require 'bootstrap.php';
 
 try {
-    router();
+    $router = new Router();
 } catch (Exception $e) {
     var_dump($e->getMessage());
 }

@@ -5,12 +5,15 @@
     },
     "autoload": {
         "files": [
-            "app/helpers/Constants.php",
-            "app/router/router.php",
-            "app/core/controller.php"
+            "app/helpers/ControllePathConstant.php",
+            "app/router/Router.php",
+            "app/core/ControllerLoader.php"
         ],
         "psr-4": {
             "app\\": "app"
         }
+    },
+    "require-dev": {
+        "kint-php/kint": "^5.0"
     }
 }

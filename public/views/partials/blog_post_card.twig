@@ -1,8 +1,8 @@
 <div class="col mb-4">
     <div class="card shadow-sm">
-        <img src="{{ post.image_url }}" class="bd-placeholder-img card-img-top" width="100%" height="225" style="object-fit: cover">
+        <img src="{{ post.image_url }}" class="bd-placeholder-img card-img-top" width="100%" height="225" style="object-fit: cover" loading="lazy">
         <div class="card-body">
-            <p class="card-text">{{ post.title }}</p>
+            <p class="card-text" style="font-weight: bold">{{ post.title }}</p>
             <hr>
             <p class="card-text">{{ post.description }}</p>
             <div class="d-flex justify-content-between align-items-center">

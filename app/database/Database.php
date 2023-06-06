@@ -2,9 +2,10 @@
 
 namespace app\database;
 
-use DatabaseConstants;
+use app\helpers\DatabaseConstants;
 use Exception;
 use PDO;
+
 class Database
 {
     private $conn;

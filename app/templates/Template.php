@@ -3,9 +3,10 @@
 namespace app\templates;
 
 use app\core\TemplateMachine;
-use app\model\Posts;
-use Tables;
-use TemplateNames;
+use app\helpers\TableNameConstants;
+use app\helpers\Tables;
+use app\model\Blogposts;
+use app\helpers\TemplateNamesConstants;
 
 class Template
 {
@@ -16,14 +17,12 @@ class Template
 
     public function indexHome()
     {
-        $postsModel = new Posts(Tables::POSTS);
+        $postsModel = new blogposts(TableNameConstants::POSTS);
         $posts = $postsModel->findAll();
-        $lastPost = $postsModel->findLast();
 
         $params = [];
         $params['posts'] = $posts;
-        $params['lastPost'] = $lastPost;
 
-        return $this->render(TemplateNames::APP_HOME, $params);
+        return $this->render(TemplateNamesConstants::APP_HOME, $params);
     }
 }
