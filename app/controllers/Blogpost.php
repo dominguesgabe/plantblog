@@ -2,17 +2,14 @@
 
 namespace app\controllers;
 
-use app\templates\Template;
+use app\core\TemplateMachine;
+use app\views\BlogpostView;
 
 class Blogpost
 {
-    public function index()
+    public function query(array $params)
     {
-        $template = new Template();
-        return $template->indexHome();
-    }
-    public function show(array $params)
-    {
+        \Kint::dump(filter_input(INPUT_GET, 'query'));
         var_dump($params);exit();
     }
 }

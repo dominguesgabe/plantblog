@@ -1,7 +1,8 @@
 {
     "require": {
         "twig/twig": "^3.0",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "coffeecode/router": "^2.0"
     },
     "autoload": {
         "files": [

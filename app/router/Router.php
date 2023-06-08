@@ -4,6 +4,7 @@ namespace app\router;
 
 use app\core\ControllerLoader;
 use Exception;
+use Kint;
 
 class Router
 {

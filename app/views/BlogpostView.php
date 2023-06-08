@@ -1,6 +1,6 @@
 <?php
 
-namespace app\templates;
+namespace app\views;
 
 use app\core\TemplateMachine;
 use app\helpers\TableNameConstants;
@@ -8,7 +8,7 @@ use app\helpers\Tables;
 use app\model\Blogposts;
 use app\helpers\TemplateNamesConstants;
 
-class Template
+class BlogpostView
 {
     public function render($templateName, $params)
     {

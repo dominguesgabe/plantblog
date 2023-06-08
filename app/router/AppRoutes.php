@@ -7,8 +7,8 @@ class AppRoutes
     {
         return [
             'GET' => [
-                '/' => 'Blogpost@index',
-                '/[a-zA-Z0-9]+' => 'Blogpost@show',
+                '/' => 'AppController@index',
+                '/[a-zA-Z0-9]+' => 'Blogpost@query',
                 '/post/[0-9]+' => 'Blogpost@show',
                 '/user/[0-9]+' => 'User@show',
             ],
