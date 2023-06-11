@@ -1,6 +1,6 @@
 <main class="container mt-5">
-    <a href="/show/{{ posts|last.id }}" class="text-decoration-none">
-        <div class="p-4 p-md-5 mb-4 rounded" style="background: url({{ posts|last.image_url }}) no-repeat center;">
+    <a href="/ler/{{ posts|last.id }}" class="text-decoration-none">
+        <div class="p-4 p-md-5 mb-4 rounded" style="background: #aaa url({{ posts|last.image_url }}); background-blend-mode: multiply;">
             <div class="col-lg-6 px-0">
                 <p class="text-sm-left text-white">Última publicação.</p>
                 <h1 class="display-4 fst-italic text-white" style="font-weight: bold">{{ posts|last.title }}</h1>

@@ -7,6 +7,7 @@ use app\helpers\TableNameConstants;
 use app\helpers\Tables;
 use app\model\Blogposts;
 use app\helpers\TemplateNamesConstants;
+use app\model\Users;
 
 class BlogpostView
 {
@@ -31,7 +32,11 @@ class BlogpostView
         $postsModel = new blogposts(TableNameConstants::POSTS);
         $post = $postsModel->show($blogpostId)[0];
 
+        $usersModel = new Users(TableNameConstants::USERS);
+        $creatorName = $usersModel->findUserNameById($post['user_id'])[0]['name'];
+
         $params['post'] = $post;
+        $params['creatorName'] = $creatorName;
 
         return $this->render(TemplateNamesConstants::APP_SHOW, $params);
     }

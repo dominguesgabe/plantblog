@@ -4,8 +4,8 @@ namespace app\model;
 
 class Users extends BasicModel
 {
-    public function findUserId(): array
+    public function findUserNameById($userId): array
     {
-        return $this->database->select('SELECT id FROM ' . $this->table)[0];
+        return $this->database->select('SELECT name FROM ' . $this->table . ' WHERE id = ' . $userId);
     }
 }

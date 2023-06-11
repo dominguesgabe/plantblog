@@ -11,13 +11,14 @@ class AppRouter
     public function __construct()
     {
         $router = new Router(AppConfigConstants::URL_BASE);
-    //$router->namespace("app\controllers\\");
+        //$router->namespace("app\controllers\\");
 
         $router->group(null);
         $router->get('/', 'app\controllers\HomeController:index');
         $router->get('/ler/{id}', 'app\controllers\HomeController:show');
         $router->post('/buscar', 'app\controllers\HomeController:query');
 
+        $router->get('/criar', 'app\controllers\BlogpostController:create');
 
         $router->group('error');
         $router->get('/{errorCode}', function($data) {

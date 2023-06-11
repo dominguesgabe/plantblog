@@ -15,12 +15,13 @@
         {% include 'partials/nav.twig' %}
 
         <div class="container my-3">
-            <div class="p-5 text-center bg-body-tertiary rounded-3">
+            <div class="col py-5" style="background: url({{ post.image_url }}) no-repeat center; font-size: 0; border-radius: 6px;">a</div>
+            <div class="p-5 bg-body-tertiary">
                 <h1 class="text-body-emphasis">{{ post.title }}</h1>
                 <p class="lead">
                     {{ post.description }}
                 </p>
-                <p class="blog-post-meta">{{ post.created_at|date("m/d/Y") }} por <a href="#">{{ post.user_id.name }}</a></p>
+                <p class="blog-post-meta">{{ post.created_at|date("m/d/Y") }} por <a href="/criador/{{ post.user_id }}">{{ creatorName }}</a></p>
             </div>
         </div>
 
