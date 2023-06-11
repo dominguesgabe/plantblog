@@ -9,8 +9,8 @@ class Blogposts extends BasicModel
         return $this->database->select('SELECT * FROM ' . $this->table . ' WHERE title LIKE "%' . $searchTerm . '%"');
     }
 
-//    public function showBlogpost($id): array
-//    {
-//        $blogpost = $this->database->select('SELECT * FROM ' . $this->table . ' WHERE id = ' . $id)[0];
-//    }
+    public function store($formData)
+    {
+
+    }
 }

@@ -7,17 +7,22 @@ use app\views\BlogpostView;
 
 class HomeController
 {
+    private BlogpostView $template;
+
+    public function __construct()
+    {
+        $this->template = new BlogpostView();
+    }
+
     public function index(): TemplateMachine
     {
-        $template = new BlogpostView();
-        return $template->indexHome();
+        return $this->template->indexHome();
     }
     public function show(array $params): TemplateMachine
     {
         $blogpostId = $params['id'];
 
-        $template = new BlogpostView();
-        return $template->show($blogpostId);
+        return $this->template->show($blogpostId);
     }
     public function query(array $params): TemplateMachine
     {
@@ -27,7 +32,6 @@ class HomeController
             return $this->index();
         }
 
-        $template = new BlogpostView();
-        return $template->queryBlogposts($searchTerm);
+        return $this->template->queryBlogposts($searchTerm);
     }
 }

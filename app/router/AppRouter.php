@@ -19,6 +19,7 @@ class AppRouter
         $router->post('/buscar', 'app\controllers\HomeController:query');
 
         $router->get('/criar', 'app\controllers\BlogpostController:create');
+        $router->post('/criar', 'app\controllers\BlogpostController:store');
 
         $router->group('error');
         $router->get('/{errorCode}', function($data) {

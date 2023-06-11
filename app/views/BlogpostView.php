@@ -11,12 +11,12 @@ use app\model\Users;
 
 class BlogpostView
 {
-    public function render($templateName, $params)
+    public function render($templateName, $params): TemplateMachine
     {
         return new TemplateMachine($templateName, $params);
     }
 
-    public function indexHome()
+    public function indexHome(): TemplateMachine
     {
         $postsModel = new blogposts(TableNameConstants::POSTS);
         $posts = $postsModel->findAll();
@@ -27,7 +27,7 @@ class BlogpostView
         return $this->render(TemplateNamesConstants::APP_HOME, $params);
     }
 
-    public function show($blogpostId)
+    public function show($blogpostId): TemplateMachine
     {
         $postsModel = new blogposts(TableNameConstants::POSTS);
         $post = $postsModel->show($blogpostId)[0];
@@ -38,7 +38,12 @@ class BlogpostView
         $params['post'] = $post;
         $params['creatorName'] = $creatorName;
 
-        return $this->render(TemplateNamesConstants::APP_SHOW, $params);
+        return $this->render(TemplateNamesConstants::BLOGPOST_SHOW, $params);
+    }
+
+    public function create(): TemplateMachine
+    {
+        return $this->render(TemplateNamesConstants::BLOGPOST_CREATE, []);
     }
 
     public function queryBlogposts($searchTerm)
