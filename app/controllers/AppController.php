@@ -7,7 +7,7 @@ use app\views\BlogpostView;
 
 class AppController
 {
-    public function index(): TemplateMachine
+    public function index($params): TemplateMachine
     {
         $template = new BlogpostView();
         return $template->indexHome();

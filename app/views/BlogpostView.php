@@ -25,4 +25,27 @@ class BlogpostView
 
         return $this->render(TemplateNamesConstants::APP_HOME, $params);
     }
+
+    public function show($blogpostId)
+    {
+        $postsModel = new blogposts(TableNameConstants::POSTS);
+        $post = $postsModel->show($blogpostId)[0];
+
+        $params['post'] = $post;
+
+        return $this->render(TemplateNamesConstants::APP_SHOW, $params);
+    }
+
+    public function queryBlogposts($searchTerm)
+    {
+        $postsModel = new blogposts(TableNameConstants::POSTS);
+        $posts = $postsModel->findBlogposts($searchTerm);
+
+        $params = [];
+
+        $params['posts'] = $posts;
+        $params['searchTerm'] = $searchTerm;
+
+        return $this->render(TemplateNamesConstants::APP_SEARCH, $params);
+    }
 }

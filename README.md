@@ -1,7 +1,11 @@
+- run docker exec -it plant_blog_web_test bash
+- run composer install
+
 # TO-DO
 
-- [ ] search form
-- [ ] post show
+- [x] search form
+- [x] post show
+- - [ ] creator
 - [ ] post create
 - [ ] user profile
 - [ ] user posted list

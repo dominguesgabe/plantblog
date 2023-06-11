@@ -6,8 +6,8 @@
     },
     "autoload": {
         "files": [
-            "app/helpers/ControllePathConstant.php",
-            "app/router/Router.php",
+            "app/helpers/ControllerPathConstants.php",
+          "app/router/AppRouter.php",
             "app/core/ControllerLoader.php"
         ],
         "psr-4": {

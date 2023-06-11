@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
     <div class="container">
-        <a class="navbar-brand" href="#" style="font-weight: bold">Plantblog</a>
+        <a class="navbar-brand" href="/" style="font-weight: bold">Plantblog</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -16,7 +16,7 @@
                     <a class="nav-link" href="/create">Publique!</a>
                 </li>
             </ul>
-            <form class="d-flex" method="get" action="/">
+            <form class="d-flex" method="post" action="{{ constant('app\\helpers\\AppConfigConstants::URL_BASE') }}/buscar">
                 <input class="form-control me-2" placeholder="Receitas com abacate" name="search" aria-label="Search">
                 <button class="btn btn-primary" type="submit">Busque</button>
             </form>

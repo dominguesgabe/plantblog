@@ -2,7 +2,7 @@
 
 namespace app\helpers;
 
-class ControllePathConstant
+class ControllerPathConstants
 {
     const CONTROLLER_PATH = 'app\\controllers\\';
 }

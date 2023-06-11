@@ -9,7 +9,7 @@ class TemplateMachine
 {
     public function __construct(string $template, array $params)
     {
-        $twigLoader = new FilesystemLoader('views/');
+        $twigLoader = new FilesystemLoader('public/views/');
         $twig = new Environment($twigLoader, []);
 
         echo $twig->render($template, $params);

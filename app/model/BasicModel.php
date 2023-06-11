@@ -19,4 +19,9 @@ abstract class BasicModel
     {
         return $this->database->select('SELECT * FROM ' . $this->table);
     }
+
+    public function show($id): array
+    {
+        return $this->database->select('SELECT * FROM ' . $this->table . ' WHERE id = ' . $id);
+    }
 }

@@ -2,7 +2,7 @@
 
 namespace app\core;
 
-use app\helpers\ControllePathConstant;
+use app\helpers\ControllerPathConstants;
 use Exception;
 
 class ControllerLoader
@@ -11,7 +11,7 @@ class ControllerLoader
     {
         [$controller, $method] = explode('@', array_values($mathedUri)[0]);
 
-        $namespacedController = ControllePathConstant::CONTROLLER_PATH . $controller;
+        $namespacedController = ControllerPathConstants::CONTROLLER_PATH . $controller;
 
         if (!class_exists($namespacedController)) {
             throw new Exception("Controller $controller do not exist");
