@@ -20,11 +20,12 @@
 - [x] search form
 - [x] post show
 - - [x] creator
-- [ ] post create
+- [x] post create
 - [ ] user profile
 - [ ] user posted list
 - - [ ] edit
 - - [ ] delete
+- [ ] sanitize
 ----
 - [ ] user create
 - [ ] user auth page

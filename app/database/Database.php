@@ -57,4 +57,42 @@ class Database
             throw new Exception('Query error');
         }
     }
+
+    public function insert(array $data, string $table): bool
+    {
+        try {
+            $this->connectDatabase();
+
+            $values = array_values($data);
+
+            $query = "INSERT INTO {$table} (title, description, image_url, reading_time, post, user_id) VALUES ('$values[0]', '$values[1]', '$values[2]', '$values[3]', '$values[4]', '1')";
+
+            $conn = $this->conn->prepare($query);
+
+            $returned = $this->executeQueryConn($conn, null);
+
+            $this->conn = null;
+
+            return $returned;
+
+        } catch (Exception $e) {
+            throw new Exception('Query error: missing fields');
+        }
+    }
+
+    public function lastInsertId(string $table): string
+    {
+        $query = "SELECT id FROM {$table} ORDER BY id DESC LIMIT 1";
+
+        $this->connectDatabase();
+
+        $conn = $this->conn->prepare($query);
+
+        $this->executeQueryConn($conn, null);
+
+        $fetched = $conn->fetchAll(PDO::FETCH_COLUMN);
+        $this->conn = null;
+
+        return $fetched[0];
+    }
 }

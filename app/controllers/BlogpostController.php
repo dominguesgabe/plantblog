@@ -29,7 +29,5 @@ class BlogpostController
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
         }
-
-        //if success redirect user to the post
     }
 }
