@@ -32,4 +32,9 @@ class Blogposts extends BasicModel
             throw new Exception('Error while writing post');
         }
     }
+
+    public function destroy(int $blogpostId): array
+    {
+        return $this->database->destroy($blogpostId, $this->table);
+    }
 }

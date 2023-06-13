@@ -29,20 +29,23 @@
         <div class="container">
             <div class="d-flex flex-column gap-4 py-md-5 align-items-center justify-content-center">
                 <h5 class="my-3" style="justify-self: flex-start">
-                    Minhas postagens:
+                    Minhas sementes:
                 </h5>
 
                 {% for blogpost in blogposts %}
                     <div class="list-group w-75">
-                        <a href="/ler/{{ blogpost.id }}" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                            <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0 align-self-center">
+                        <a href="/ler/{{ blogpost.id }}" class="list-group-item list-group-item-action d-flex gap-3 py-3 align-items-center" aria-current="true">
+                            <img src="https://images.squarespace-cdn.com/content/v1/54fbb611e4b0d7c1e151d22a/1614620924715-7L5TVJ7KLDOA4IIQLEE9/seedling.jpg?format=1500w" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
                             <div class="d-flex gap-2 w-100 justify-content-between">
                                 <div class="ml-3">
                                     <h6 class="mb-0"><b>{{ blogpost.title }}</b></h6>
                                     <p class="mb-0 opacity-75">{{ blogpost.description }}</p>
-                                    <small class="opacity-50 text-nowrap">{{ blogpost.created_at|date("m/d/Y") }}</small>
+                                    <small class="opacity-50 text-nowrap">{{ blogpost.created_at|date("d/m/Y") }}</small>
                                 </div>
                             </div>
+                            <form action="/delete/{{ blogpost.id }}" method="post">
+                                <button class="btn btn-danger btn-sm">X</button>
+                            </form>
                         </a>
                     </div>
                 {% endfor %}

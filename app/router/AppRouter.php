@@ -17,6 +17,7 @@ class AppRouter
         $router->get('/', 'app\controllers\HomeController:index');
         $router->get('/ler/{id}', 'app\controllers\HomeController:show');
         $router->post('/buscar', 'app\controllers\HomeController:query');
+        $router->post('/delete/{id}', 'app\controllers\BlogpostController:destroy');
 
         $router->group('criar');
         $router->get('/', 'app\controllers\BlogpostController:create');

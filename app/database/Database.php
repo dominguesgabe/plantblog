@@ -95,4 +95,24 @@ class Database
 
         return $fetched[0];
     }
+
+    public function destroy(string $id, string $table): array
+    {
+        try {
+            $this->connectDatabase();
+
+            $query = "DELETE FROM {$table} WHERE id = {$id}";
+
+            $conn = $this->conn->prepare($query);
+            $this->executeQueryConn($conn, null);
+
+            $fetched = $conn->fetchAll(PDO::FETCH_ASSOC);
+            $this->conn = null;
+
+            return $fetched;
+
+        } catch (Exception $e) {
+            throw new Exception('Query error');
+        }
+    }
 }

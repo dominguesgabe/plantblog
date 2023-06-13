@@ -13,7 +13,7 @@
 1. Clone the repo
 2. Run `docker-compose up -d`
 3. Enter the container using `docker exec -it -it plant_blog_web_test bash`
-4. Finally, run `composer install
+4. Finally, run `composer install`
 
 # TO-DO
 
@@ -21,10 +21,11 @@
 - [x] post show
 - - [x] creator
 - [x] post create
-- [ ] user profile
-- [ ] user posted list
+- [x] user profile
+- [x] user posted list
 - - [ ] edit
-- - [ ] delete
+- - [x] delete
+- - - [ ] delete feedback
 - [ ] sanitize
 ----
 - [ ] user create

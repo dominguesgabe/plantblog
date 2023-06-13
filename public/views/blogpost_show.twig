@@ -21,7 +21,7 @@
                 <p class="lead">
                     {{ post.description }}
                 </p>
-                <p class="blog-post-meta">{{ post.created_at|date("m/d/Y") }} por <a href="/criador/{{ post.user_id }}">{{ creatorName }}</a></p>
+                <p class="blog-post-meta">{{ post.created_at|date("d/m/Y") }} por <a href="/usuario/{{ post.user_id }}">{{ creatorName }}</a></p>
             </div>
         </div>
 
