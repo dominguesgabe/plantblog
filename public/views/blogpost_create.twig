@@ -14,7 +14,7 @@
     <body>
         {% include 'partials/nav.twig' %}
 
-        <div class="container mt-5 d-flex justify-content-center">
+        <div class="container my-5 d-flex justify-content-center">
             <div class="col-md-7 col-lg-8">
                 <h4 class="mb-3">Crie uma postagem!</h4>
                 <form action="{{ constant('app\\helpers\\AppConfigConstants::URL_BASE') }}/criar" method="post">
@@ -48,9 +48,12 @@
                         <div class="col-4 mt-3">
                             <button class="w-100 btn btn-primary" type="submit">Postar</button>
                         </div>
+                    </div>
                 </form>
             </div>
         </div>
+
+        {% include 'partials/footer.twig' %}
     </body>
 </html>
 

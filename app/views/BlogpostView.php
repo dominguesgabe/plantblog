@@ -9,13 +9,8 @@ use app\model\Blogposts;
 use app\helpers\TemplateNamesConstants;
 use app\model\Users;
 
-class BlogpostView
+class BlogpostView extends View
 {
-    public function render($templateName, $params): TemplateMachine
-    {
-        return new TemplateMachine($templateName, $params);
-    }
-
     public function indexHome(): TemplateMachine
     {
         $postsModel = new blogposts(TableNameConstants::POSTS);
@@ -27,7 +22,7 @@ class BlogpostView
         return $this->render(TemplateNamesConstants::APP_HOME, $params);
     }
 
-    public function show($blogpostId): TemplateMachine
+    public function show(int $blogpostId): TemplateMachine
     {
         $postsModel = new blogposts(TableNameConstants::POSTS);
         $post = $postsModel->show($blogpostId)[0];

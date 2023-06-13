@@ -13,6 +13,11 @@ class Blogposts extends BasicModel
         return $this->database->select('SELECT * FROM ' . $this->table . ' WHERE title LIKE "%' . $searchTerm . '%"');
     }
 
+    public function findBlogpostsByUser(int $userId): array
+    {
+        return $this->database->select('SELECT id, title, description, created_at FROM ' . $this->table . ' WHERE user_id = :userId ORDER BY created_at DESC', ['userId' => $userId]);
+    }
+
     public function store(array $formData): TemplateMachine
     {
         try {

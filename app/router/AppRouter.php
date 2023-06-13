@@ -18,10 +18,14 @@ class AppRouter
         $router->get('/ler/{id}', 'app\controllers\HomeController:show');
         $router->post('/buscar', 'app\controllers\HomeController:query');
 
-        $router->get('/criar', 'app\controllers\BlogpostController:create');
-        $router->post('/criar', 'app\controllers\BlogpostController:store');
+        $router->group('criar');
+        $router->get('/', 'app\controllers\BlogpostController:create');
+        $router->post('/', 'app\controllers\BlogpostController:store');
 
-        $router->group('error');
+        $router->group('usuario');
+        $router->get('/{userId}', 'app\controllers\UserController:show');
+
+        $router->group('erro');
         $router->get('/{errorCode}', function($data) {
             Kint::dump("ocorreu um erro {$data['errorCode']}");
         });

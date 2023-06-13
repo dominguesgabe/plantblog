@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Plantblog</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+          crossorigin="anonymous">
+    </head>
+    <body>
+        {% include 'partials/nav.twig' %}
+
+        <div class="offcanvas offcanvas-start">
+            <div class="text-center bg-body-secondary">
+                <div class="container py-5">
+                    <h2>🌾</h2>
+                    <h1 class="text-body-emphasis">{{ user.name }}</h1>
+                    <blockquote class="col-lg-8 mx-auto lead">"{{ user.user_resume }}"</blockquote>
+
+                </div>
+            </div>
+        </div>
+        <div class="example-divider" style=" height: 1rem;background-color: rgba(0, 0, 0, .1);border: solid rgba(0, 0, 0, .15);border-width: 1px 0;box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);"></div>
+
+        <div class="container">
+            <div class="d-flex flex-column gap-4 py-md-5 align-items-center justify-content-center">
+                <h5 class="my-3" style="justify-self: flex-start">
+                    Minhas postagens:
+                </h5>
+
+                {% for blogpost in blogposts %}
+                    <div class="list-group w-75">
+                        <a href="/ler/{{ blogpost.id }}" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                            <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0 align-self-center">
+                            <div class="d-flex gap-2 w-100 justify-content-between">
+                                <div class="ml-3">
+                                    <h6 class="mb-0"><b>{{ blogpost.title }}</b></h6>
+                                    <p class="mb-0 opacity-75">{{ blogpost.description }}</p>
+                                    <small class="opacity-50 text-nowrap">{{ blogpost.created_at|date("m/d/Y") }}</small>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        {% include 'partials/footer.twig' %}
+    </body>
+</html>
+
